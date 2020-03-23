@@ -6,11 +6,9 @@ request('http://www3.worldrag.com/database/?act=mobsearch&cid=on&id=1832', funct
 
 	var $ = cheerio.load(body);
 
-	$('#AllSearchResults table tbody').each(function() {
-		// to do
-		var monsterName = $('tr:nth-child(3)').text().trim();
-
-		console.log(monsterName);
+	$('#AllSearchResults table:first tbody').each(function() {
+		var montersName = $('tr:first-child td:nth-child(3)').text().trim();
+		console.log(montersName);
 	});
 
 });
